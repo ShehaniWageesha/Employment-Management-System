@@ -9,19 +9,37 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/add').post((req, res) => {
-
-    const empName = req.body.empName;
     const empId = req.body.empId;
+    const fullname = req.body.fullname;
+    const intials = req.body.intials;
+    const empName = req.body.empName;
+    const gender = req.body.gender;
+    const dob = Date.parse(req.body.dob);
+    const email = req.body.email;
+    const mobile = req.body.mobile;
     const designation = req.body.designation;
     const empType = req.body.empType;
+    const joinedDate = Date.parse(req.body.joinedDate);
     const experience = req.body.experience;
+    const salary = req.body.salary;
+    const notes = req.body.notes;
+    
 
     const newEmployee = new Employee ({
-        empName,
         empId,
+        fullname,
+        intials,
+        empName,
+        gender,
+        dob,
+        email,
+        mobile,
         designation,
         empType,
-        experience
+        joinedDate,
+        experience,
+        salary,
+        notes
     });
 
     newEmployee.save()
@@ -46,12 +64,20 @@ router.route('/:id').delete((req, res) => {
 router.route('/update/:id').post((req, res) => {
 Employee.findById(req.params.id)
 .then(employee =>{
-
-    employee.empName = req.body.empName;
     employee.empId = req.body.empId;
+    employee.fullname = req.body.fullname;
+    employee.intials = req.body.intials;
+    employee.empName = req.body.empName;
+    employee.gender = req.body.gender;
+    employee.dob = Date.parse(req.body.dob);
+    employee.email = req.body.email;
+    employee.mobile = req.body.mobile;
     employee.designation = req.body.designation;
     employee.empType = req.body.empType;
+    employee.joinedDate = Date.parse(req.body.joinedDate);
     employee.experience = req.body.experience;
+    employee.salary = req.body.salary;
+    employee.notes = req.body.notes;
     
     employee.save()
         .then(() => res.json('Employee updated!!'))
