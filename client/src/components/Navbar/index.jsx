@@ -6,28 +6,23 @@ import { Link } from 'react-router-dom';
 const NavBar = () => (
   <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
     <Link to="/" className="navbar-brand">
-      ExcerTracker
+      Employee Info
     </Link>
 
     <div className="collpase navbar-collapse">
       <ul className="navbar-nav mr-auto">
         <li className="navbar-item">
           <Link to="/" className="nav-link">
-            Excercise
+            Employees
           </Link>
         </li>
 
         <li className="navbar-item">
           <Link to="/create" className="nav-link">
-            Create Excercise
+            Add Employee
           </Link>
         </li>
-
-        <li className="navbar-item">
-          <Link to="/user" className="nav-link">
-            Create User
-          </Link>
-        </li>
+        
       </ul>
     </div>
   </nav>);
