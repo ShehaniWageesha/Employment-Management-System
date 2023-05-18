@@ -27,9 +27,10 @@ npm run start
 
 <h5>Sample UIs</h5>
 
-![screencapture-localhost-3000-2023-05-18-21_01_06](https://github.com/ShehaniWageesha/Employment-Management-System/assets/66903669/3d466911-0dd2-4164-a07d-bc5570c41001)
 
-![screencapture-localhost-3000-create-2023-05-18-21_01_21](https://github.com/ShehaniWageesha/Employment-Management-System/assets/66903669/64cba5f2-22ce-4691-a91a-56dff48ec96f)
+![screencapture-localhost-3000-2023-05-18-21_01_06](https://github.com/ShehaniWageesha/Employment-Management-System/assets/66903669/627a1996-41e0-4165-a4e8-ce528825bdc4)
 
-![screencapture-localhost-3000-edit6464e776cf46975118510f40-2023-05-18-21_01_42](https://github.com/ShehaniWageesha/Employment-Management-System/assets/66903669/9545ccd2-4840-4bd8-bf38-291c3d315093)
+![screencapture-localhost-3000-create-2023-05-18-21_01_21](https://github.com/ShehaniWageesha/Employment-Management-System/assets/66903669/6ed767e6-344a-4819-ae70-bfe23393727b)
+
+![screencapture-localhost-3000-edit6464e776cf46975118510f40-2023-05-18-21_01_42](https://github.com/ShehaniWageesha/Employment-Management-System/assets/66903669/6f14e4cf-baf9-4a63-9f34-7471bad17ab4)
 
