@@ -110,7 +110,7 @@ class EmployeesList extends Component {
         <br />
         <table className="table table-bordered table-hover table-md text-center">
           <thead className="thead-light">
-            <tr style={{ pageSize: '5' }}>
+            <tr>
               <th className="w-30">Display Name</th>
               <th className="w-30">Emp ID</th>
               <th className="w-30">Designation</th>
