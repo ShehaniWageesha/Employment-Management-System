@@ -20,11 +20,11 @@ const Employee = (props) => (
       </Link>
       <a
         style={{ textDecoration: 'none', color: 'red' }}
-        href="#"
+        href="/"
         onClick={() => {
           Swal.fire({
             icon: 'success',
-            title: 'Data deleted successfully!',
+            title: 'Data deleted successfully!'
           });
           props.deleteEmployee(props.employee._id);
         }}

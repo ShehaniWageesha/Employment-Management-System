@@ -4,22 +4,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const NavBar = () => (
-  <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
+  <nav className="navbar navbar-light bg-light navbar-expand-lg fixed-top">
     <Link to="/" className="navbar-brand">
-      Employee Info
+      <h5>| EMS |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
     </Link>
 
     <div className="collpase navbar-collapse">
       <ul className="navbar-nav mr-auto">
         <li className="navbar-item">
           <Link to="/" className="nav-link">
-            Employees
+            People&nbsp;&nbsp;
           </Link>
         </li>
 
         <li className="navbar-item">
           <Link to="/create" className="nav-link">
-            Add Employee
+            Add People
           </Link>
         </li>
         

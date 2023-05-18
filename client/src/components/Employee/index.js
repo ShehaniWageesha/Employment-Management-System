@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { RoutePaths } from '../../routes/route-paths';
 
 const Employee = (props) => (
@@ -25,7 +26,7 @@ const Employee = (props) => (
         to={`${RoutePaths.edit}${props.employee._id}`}
         style={{ color: 'green', textDecoration: 'none', fontWeight: 'bold' }}
       >
-        Update
+        Edit &nbsp;
       </Link>
       | |
       <a
@@ -34,12 +35,12 @@ const Employee = (props) => (
         onClick={() => {
           Swal.fire({
             icon: 'success',
-            title: 'Employee Data Deleted Successfully!',
+            title: 'Data deleted successfully!',
           });
           props.deleteEmployee(props.employee._id);
         }}
       >
-        Delete
+        &nbsp; Delete
       </a>
     </td>
   </tr>

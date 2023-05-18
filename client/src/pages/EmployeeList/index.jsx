@@ -56,7 +56,7 @@ class EmployeesList extends Component {
       return (
         <EmployeeTable
           employee={currentemployee}
-          deleteEmployee={this.removeEmployee}
+          // deleteEmployee={this.removeEmployee}
           key={currentemployee._id}
         />
       );
@@ -66,12 +66,13 @@ class EmployeesList extends Component {
   render() {
     return (
       <div>
+        <br/>
         <h4>People</h4>
         <hr></hr>
         <br />
         <div>
-          <div style={{ width: '270px' }}>
-            <div
+          <div>
+            {/* <div
               className="form-group"
               style={{ fontWeight: 'bold', color: '#0b7fab', float: 'left' }}
             >
@@ -85,7 +86,7 @@ class EmployeesList extends Component {
                 <option value="Contract Basis">Contract Basis</option>
                 <option value="Other">Other</option>
               </select>
-            </div>
+            </div> */}
           </div>
           <div>
             <a href="http://localhost:3000/create">
@@ -102,13 +103,14 @@ class EmployeesList extends Component {
               />
             </a>
           </div>
+          
         </div>
         <br />
         <br />
         <br />
         <table className="table table-bordered table-hover table-md text-center">
           <thead className="thead-light">
-            <tr>
+            <tr style={{ pageSize: '5' }}>
               <th className="w-30">Display Name</th>
               <th className="w-30">Emp ID</th>
               <th className="w-30">Designation</th>
@@ -119,6 +121,7 @@ class EmployeesList extends Component {
           </thead>
           <tbody>{this.employeeList()}</tbody>
         </table>
+        <br/><br/><br/><br/>
       </div>
     );
   }

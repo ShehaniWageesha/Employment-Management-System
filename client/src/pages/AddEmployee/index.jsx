@@ -3,12 +3,12 @@
 import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-// import Swal from 'sweetalert2';
+import Swal from 'sweetalert2';
 import { addEmployees } from '../../services/employee';
 
 class AddEmployee extends Component {
   state = {
-    empId: parseInt(Date.now() * Math.random()),
+    empId: (Math.floor(Math.random() * 10000) + 10000).toString().substring(1),
     fullname: '',
     initials: '',
     empName: '',
@@ -126,10 +126,10 @@ class AddEmployee extends Component {
       // show proper error message to user
     }
 
-    // Swal.fire({
-    //   icon: 'success',
-    //   title: 'Data added successfully!'
-    // });
+    Swal.fire({
+      icon: 'success',
+      title: 'Data added successfully!'
+    });
 
     this.setState({ empId: '' });
     this.setState({ fullname: '' });
@@ -230,6 +230,7 @@ class AddEmployee extends Component {
             <input
               type="text"
               className="form-control"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
               value={this.state.email}
               onChange={this.onChangeEmail}
             />
@@ -242,6 +243,7 @@ class AddEmployee extends Component {
             <input
               type="text"
               className="form-control"
+              pattern="[0-9]{10}"
               value={this.state.mobile}
               onChange={this.onChangeMobile}
             />
@@ -338,8 +340,7 @@ class AddEmployee extends Component {
               onChange={this.onChangeNotes}
             />
           </div>
-          <br />
-          <div style={{ width: '165px' }}>
+          <div style={{ width: '200px', float: 'right' }}>
             <div className="form-group">
               <a href="http://localhost:3000/">
                 <input
@@ -347,22 +348,24 @@ class AddEmployee extends Component {
                   value="Cancel"
                   className="btn btn-primary"
                   style={{
-                    float: 'right',
-                    borderColor: '#0b7fab',
+                    fontWeight: 'bold',
+                    marginTop: '17px',
+                    float: 'left',
+                    border: 'none',
                     backgroundColor: '#FFFFFF',
                     color: '#0b7fab',
                   }}
                 />
               </a>
             </div>
-
             <div className="form-group">
               <input
                 type="submit"
                 value="Add People"
                 className="btn btn-primary"
                 style={{
-                  float: 'left',
+                  fontWeight: 'bold',
+                  float: 'right',
                   borderColor: '#0b7fab',
                   backgroundColor: '#0b7fab',
                   color: '#FFFFFF',

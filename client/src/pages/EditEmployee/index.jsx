@@ -270,6 +270,7 @@ class EditEmployees extends Component {
             <input
               type="text"
               className="form-control"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
               value={this.state.email}
               onChange={this.onChangeEmail}
             />
@@ -282,6 +283,7 @@ class EditEmployees extends Component {
             <input
               type="text"
               className="form-control"
+              pattern="[0-9]{10}"
               value={this.state.mobile}
               onChange={this.onChangeMobile}
             />
@@ -379,7 +381,7 @@ class EditEmployees extends Component {
             />
           </div>
           <br />
-          <div style={{ width: '165px' }}>
+          <div style={{ width: '165px', float: 'right' }}>
             <div className="form-group">
               <a href="http://localhost:3000/">
                 <input
@@ -387,8 +389,10 @@ class EditEmployees extends Component {
                   value="Cancel"
                   className="btn btn-primary"
                   style={{
-                    float: 'right',
-                    borderColor: '#0b7fab',
+                    float: 'left',
+                    marginTop: '17px',
+                    fontWeight: 'bold',
+                    border: 'none',
                     backgroundColor: '#FFFFFF',
                     color: '#0b7fab',
                   }}
@@ -402,8 +406,9 @@ class EditEmployees extends Component {
                 value="Update"
                 className="btn btn-primary"
                 style={{
-                  float: 'left',
+                  float: 'right',
                   borderColor: '#0b7fab',
+                  fontWeight: 'bold',
                   backgroundColor: '#0b7fab',
                   color: '#FFFFFF',
                 }}
