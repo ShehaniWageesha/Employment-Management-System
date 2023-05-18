@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import Swal from 'sweetalert2';
 import { addEmployees } from '../../services/employee';
 
 class AddEmployee extends Component {
@@ -20,7 +21,7 @@ class AddEmployee extends Component {
     joinedDate: new Date(),
     experience: '',
     salary: '',
-    notes: ''
+    notes: '',
   };
 
   onChangeEmpId = (e) => {
@@ -111,7 +112,7 @@ class AddEmployee extends Component {
       joinedDate: this.state.joinedDate,
       experience: this.state.experience,
       salary: this.state.salary,
-      notes: this.state.notes
+      notes: this.state.notes,
     };
     try {
       const response = await addEmployees(employee);
@@ -123,6 +124,11 @@ class AddEmployee extends Component {
       // error handling
       // show proper error message to user
     }
+
+    Swal.fire({
+      icon: 'success',
+      title: 'Data added successfully!'
+    });
 
     this.setState({ empId: '' });
     this.setState({ fullname: '' });
@@ -138,19 +144,21 @@ class AddEmployee extends Component {
     this.setState({ experience: '' });
     this.setState({ salary: '' });
     this.setState({ notes: '' });
+    // window.location = "/";
   };
 
   render() {
     return (
       <div>
-        <h3>Add New Employee</h3>
+        <h4>Add People</h4>
+        <hr></hr>
         <form onSubmit={this.onSubmit}>
-          <div className="form-group">
-            <label id={this.state.empId}></label>
-            
-          </div>
-          <div className="form-group">
-            <label>Full Name</label>
+          <label id={this.state.empId}></label>
+          <div
+            className="form-group"
+            style={{ fontWeight: 'bold', color: '#0b7fab' }}
+          >
+            <label>Full Name *</label>
             <input
               type="text"
               required
@@ -159,8 +167,13 @@ class AddEmployee extends Component {
               onChange={this.onChangeFullName}
             />
           </div>
-          <div className="form-group">
-            <label>Initials</label>
+        </form>
+        <form onSubmit={this.onSubmit} style={{ columnCount: '2' }}>
+          <div
+            className="form-group"
+            style={{ fontWeight: 'bold', color: '#0b7fab' }}
+          >
+            <label>Name with Initials *</label>
             <input
               type="text"
               required
@@ -169,20 +182,24 @@ class AddEmployee extends Component {
               onChange={this.onChangeInitials}
             />
           </div>
-          <div className="form-group">
-            <label>Prefered / Displayed Name</label>
+          <div
+            className="form-group"
+            style={{ fontWeight: 'bold', color: '#0b7fab' }}
+          >
+            <label>Preferred / Displayed Name</label>
             <input
               type="text"
-              required
               className="form-control"
               value={this.state.empName}
               onChange={this.onChangeEmpName}
             />
           </div>
-          <div className="form-group" style={{ fontWeight: 'bold' }}>
+          <div
+            className="form-group"
+            style={{ fontWeight: 'bold', color: '#0b7fab' }}
+          >
             <label>Gender</label>
             <select
-              required
               className="form-control"
               value={this.state.gender}
               onChange={this.onChangeGender}
@@ -191,7 +208,10 @@ class AddEmployee extends Component {
               <option value="Female">Female</option>
             </select>
           </div>
-          <div className="form-group" style={{ fontWeight: 'bold' }}>
+          <div
+            className="form-group"
+            style={{ fontWeight: 'bold', color: '#0b7fab' }}
+          >
             <label>Date of Birth</label>
             <div>
               <DatePicker
@@ -201,40 +221,48 @@ class AddEmployee extends Component {
               />
             </div>
           </div>
-          <div className="form-group">
+          <div
+            className="form-group"
+            style={{ fontWeight: 'bold', color: '#0b7fab' }}
+          >
             <label>Email</label>
             <input
               type="text"
-              required
               className="form-control"
               value={this.state.email}
               onChange={this.onChangeEmail}
             />
           </div>
-          <div className="form-group">
+          <div
+            className="form-group"
+            style={{ fontWeight: 'bold', color: '#0b7fab' }}
+          >
             <label>Mobile Number</label>
             <input
               type="text"
-              required
               className="form-control"
               value={this.state.mobile}
               onChange={this.onChangeMobile}
             />
           </div>
-          <div className="form-group">
+          <div
+            className="form-group"
+            style={{ fontWeight: 'bold', color: '#0b7fab' }}
+          >
             <label>Designation</label>
             <input
               type="text"
-              required
               className="form-control"
               value={this.state.designation}
               onChange={this.onChangeDesignation}
             />
           </div>
-          <div className="form-group" style={{ fontWeight: 'bold' }}>
+          <div
+            className="form-group"
+            style={{ fontWeight: 'bold', color: '#0b7fab' }}
+          >
             <label>Employee Type</label>
             <select
-              required
               className="form-control"
               value={this.state.empType}
               onChange={this.onChangeEmpType}
@@ -245,7 +273,10 @@ class AddEmployee extends Component {
               <option value="Other">Other</option>
             </select>
           </div>
-          <div className="form-group" style={{ fontWeight: 'bold' }}>
+          <div
+            className="form-group"
+            style={{ fontWeight: 'bold', color: '#0b7fab' }}
+          >
             <label>Joined Date</label>
             <div>
               <DatePicker
@@ -255,10 +286,12 @@ class AddEmployee extends Component {
               />
             </div>
           </div>
-          <div className="form-group" style={{ fontWeight: 'bold' }}>
+          <div
+            className="form-group"
+            style={{ fontWeight: 'bold', color: '#0b7fab' }}
+          >
             <label>Experience</label>
             <select
-              required
               className="form-control"
               value={this.state.experience}
               onChange={this.onChangeExperience}
@@ -277,32 +310,70 @@ class AddEmployee extends Component {
               <option value="More than 10 Years">More than 10 Years</option>
             </select>
           </div>
-          <div className="form-group">
+        </form>
+        <form onSubmit={this.onSubmit}>
+          <div
+            className="form-group"
+            style={{ fontWeight: 'bold', color: '#0b7fab' }}
+          >
             <label>Salary</label>
             <input
               type="text"
-              required
               className="form-control"
               value={this.state.salary}
               onChange={this.onChangeSalary}
             />
           </div>
-          <div className="form-group">
+          <div
+            className="form-group"
+            style={{ fontWeight: 'bold', color: '#0b7fab' }}
+          >
             <label>Personal Notes</label>
             <textarea
               rows="4"
               cols="50"
-              required
               className="form-control"
               value={this.state.notes}
               onChange={this.onChangeNotes}
             />
           </div>
+          <br />
+          <div style={{ width: '200px' }}>
+            <div className="form-group">
+              <a href="http://localhost:3000/">
+                <input
+                  type="button"
+                  value="Cancel"
+                  className="btn btn-primary"
+                  style={{
+                    float: 'right',
+                    borderColor: '#0b7fab',
+                    backgroundColor: '#FFFFFF',
+                    color: '#0b7fab',
+                  }}
+                />
+              </a>
+            </div>
 
-          <div className="form-group">
-            <input type="submit" value="Add People" className="btn btn-primary" />
+            <div className="form-group">
+              <input
+                type="submit"
+                value="Add People"
+                className="btn btn-primary"
+                style={{
+                  float: 'left',
+                  borderColor: '#0b7fab',
+                  backgroundColor: '#0b7fab',
+                  color: '#FFFFFF',
+                }}
+              />
+            </div>
           </div>
         </form>
+        <br />
+        <br />
+        <br />
+        <br />
       </div>
     );
   }
