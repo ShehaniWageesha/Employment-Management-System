@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
 import { addEmployees } from '../../services/employee';
 
 class AddEmployee extends Component {
@@ -114,6 +114,7 @@ class AddEmployee extends Component {
       salary: this.state.salary,
       notes: this.state.notes,
     };
+
     try {
       const response = await addEmployees(employee);
       // success scenario handle here
@@ -125,10 +126,10 @@ class AddEmployee extends Component {
       // show proper error message to user
     }
 
-    Swal.fire({
-      icon: 'success',
-      title: 'Data added successfully!'
-    });
+    // Swal.fire({
+    //   icon: 'success',
+    //   title: 'Data added successfully!'
+    // });
 
     this.setState({ empId: '' });
     this.setState({ fullname: '' });
@@ -338,7 +339,7 @@ class AddEmployee extends Component {
             />
           </div>
           <br />
-          <div style={{ width: '200px' }}>
+          <div style={{ width: '165px' }}>
             <div className="form-group">
               <a href="http://localhost:3000/">
                 <input
