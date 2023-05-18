@@ -14,15 +14,14 @@ class EmployeesList extends Component {
   }
 
   fetchEmployees = async () => {
-    try{
+    try {
       const response = await getEmployees();
 
       this.setState({ employees: response.data || [] });
-    
-    } catch(e) {
+    } catch (e) {
       // error handling
     }
-  }
+  };
 
   removeEmployee = async (id) => {
     try {
@@ -34,11 +33,10 @@ class EmployeesList extends Component {
           employees: this.state.employees.filter((el) => el._id !== id),
         });
       }
-
-    } catch(e) {
+    } catch (e) {
       // error handling
     }
-  }
+  };
 
   employeesList() {
     return this.state.employees.map((currentemployee) => {
@@ -51,7 +49,7 @@ class EmployeesList extends Component {
       );
     });
   }
- 
+
   render() {
     return (
       <div>
@@ -59,15 +57,17 @@ class EmployeesList extends Component {
         <table className="table">
           <thead className="thead-light">
             <tr>
-              <th>Name</th>
-              <th>ID</th>
+              <th>Employee ID</th>
+              <th>Preferred Name</th>
               <th>Designation</th>
-              <th>Type</th>
+              <th>Emp Type</th>
               <th>Experience</th>
-              <th>Action</th>
+              <th>Actions</th>
             </tr>
           </thead>
-          <tbody>{this.employeesList()}</tbody>
+          <tbody>
+            {this.employeesList()}
+          </tbody>
         </table>
       </div>
     );
