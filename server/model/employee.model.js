@@ -6,17 +6,17 @@ const employeeSchema = new Schema({
     empId: {type: String,require: true},
     fullname: {type: String, required: true},
     initials: {type: String, required: true},
-    empName: {type: String,require: true},
-    gender: {type: String, required: true},
-    dob: {type: Date, required: true},
-    email: {type: String, required: true},
-    mobile: {type: String, required: true},
-    designation: {type: String,require: true},
-    empType: {type: String,require: true},
-    joinedDate: {type: Date, required: true},
-    experience: {type: String,require: true},
-    salary: {type: String, required: true},
-    notes: {type: String, required: true}
+    empName: {type: String},
+    gender: {type: String},
+    dob: {type: Date},
+    email: {type: String},
+    mobile: {type: String},
+    designation: {type: String},
+    empType: {type: String},
+    joinedDate: {type: Date},
+    experience: {type: String},
+    salary: {type: String},
+    notes: {type: String}
 }, {
     timestamps: true,
 });

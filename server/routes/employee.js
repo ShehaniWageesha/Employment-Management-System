@@ -4,7 +4,7 @@ let Employee = require('../model/employee.model');
 router.route('/').get((req, res) => {
     Employee.find()
         .then(Employees => res.json(Employees))
-        .catch(err => res.status(400).json('Error:' + err));
+        .catch(err => res.status(400).json('Error : ' + err));
 
 });
 
@@ -43,7 +43,7 @@ router.route('/add').post((req, res) => {
     });
 
     newEmployee.save()
-        .then(() => res.json('Employee added!'))
+        .then(() => res.json('Data added!'))
         .catch(err => res.status(400).json('Error:' + err));
 
 });
@@ -56,7 +56,7 @@ router.route('/:id').get((req, res) => {
 });
 router.route('/:id').delete((req, res) => {
     Employee.findByIdAndDelete(req.params.id)
-        .then(Employees => res.json('Employees deleted'))
+        .then(() => res.json('Data deleted'))
         .catch(err => res.status(400).json('Error:' + err));
 
 });
@@ -80,7 +80,7 @@ Employee.findById(req.params.id)
     employee.notes = req.body.notes;
     
     employee.save()
-        .then(() => res.json('Employee updated!!'))
+        .then(() => res.json('Data updated!'))
         .catch(err => res.status(400).json('Error:' + err));
 
 })
