@@ -24,7 +24,6 @@ npm install
 ```sh
 npm run start
 ```
-<br/>
 
 <h5>Sample UIs</h5>
 
