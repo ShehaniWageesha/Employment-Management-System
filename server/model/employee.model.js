@@ -16,7 +16,7 @@ const employeeSchema = new Schema({
     joinedDate: {type: Date, required: true},
     experience: {type: String,require: true},
     salary: {type: String, required: true},
-    note: {type: String, required: true}
+    notes: {type: String, required: true}
 }, {
     timestamps: true,
 });

@@ -11,7 +11,7 @@ router.route('/').get((req, res) => {
 router.route('/add').post((req, res) => {
     const empId = req.body.empId;
     const fullname = req.body.fullname;
-    const intials = req.body.intials;
+    const initials = req.body.initials;
     const empName = req.body.empName;
     const gender = req.body.gender;
     const dob = Date.parse(req.body.dob);
@@ -28,7 +28,7 @@ router.route('/add').post((req, res) => {
     const newEmployee = new Employee ({
         empId,
         fullname,
-        intials,
+        initials,
         empName,
         gender,
         dob,
@@ -66,7 +66,7 @@ Employee.findById(req.params.id)
 .then(employee =>{
     employee.empId = req.body.empId;
     employee.fullname = req.body.fullname;
-    employee.intials = req.body.intials;
+    employee.initials = req.body.initials;
     employee.empName = req.body.empName;
     employee.gender = req.body.gender;
     employee.dob = Date.parse(req.body.dob);
