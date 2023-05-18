@@ -7,7 +7,7 @@ import { addEmployees } from '../../services/employee';
 
 class AddEmployee extends Component {
   state = {
-    empId: '',
+    empId: parseInt(Date.now() * Math.random()),
     fullname: '',
     initials: '',
     empName: '',
@@ -146,14 +146,8 @@ class AddEmployee extends Component {
         <h3>Add New Employee</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
-            <label>Employee Id</label>
-            <input
-              type="text"
-              required
-              className="form-control"
-              value={this.state.empId}
-              onChange={this.onChangeEmpId}
-            />
+            <label id={this.state.empId}></label>
+            
           </div>
           <div className="form-group">
             <label>Full Name</label>
@@ -295,8 +289,9 @@ class AddEmployee extends Component {
           </div>
           <div className="form-group">
             <label>Personal Notes</label>
-            <input
-              type="text"
+            <textarea
+              rows="4"
+              cols="50"
               required
               className="form-control"
               value={this.state.notes}

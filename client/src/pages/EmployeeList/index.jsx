@@ -1,7 +1,8 @@
 /** @format */
 
 import React, { Component } from 'react';
-import Employee from '../../components/Employee/index';
+// import Employee from '../../components/Employee/index';
+import EmployeeTable from '../../components/Employee/table';
 import { deleteEmployee, getEmployees } from '../../services/employee';
 
 class EmployeesList extends Component {
@@ -41,7 +42,7 @@ class EmployeesList extends Component {
   employeesList() {
     return this.state.employees.map((currentemployee) => {
       return (
-        <Employee
+        <EmployeeTable
           employee={currentemployee}
           deleteEmployee={this.removeEmployee}
           key={currentemployee._id}
@@ -65,9 +66,7 @@ class EmployeesList extends Component {
               <th>Actions</th>
             </tr>
           </thead>
-          <tbody>
-            {this.employeesList()}
-          </tbody>
+          <tbody>{this.employeesList()}</tbody>
         </table>
       </div>
     );

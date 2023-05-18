@@ -182,6 +182,7 @@ class EditEmployees extends Component {
               className="form-control"
               value={this.state.empId}
               onChange={this.onChangeEmpId}
+              disabled
             />
           </div>
           <div className="form-group">
@@ -324,8 +325,9 @@ class EditEmployees extends Component {
           </div>
           <div className="form-group">
             <label>Personal Notes</label>
-            <input
-              type="text"
+            <textarea
+              rows="4"
+              cols="50"
               required
               className="form-control"
               value={this.state.notes}
